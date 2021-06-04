@@ -1,0 +1,4 @@
+[15-Apr-2021 18:59:51 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home3/abdullahali/wp.jaidenshannon.com/projectj/wp-content/themes/jhon/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home3/abdullahali/wp.jaidenshannon.com/projectj/wp-content/themes/jhon/index.php on line 1
