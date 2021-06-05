@@ -21,6 +21,8 @@
 
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/media.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/megafish.css">
+		
 </head>
 <?php wp_head(); ?>
 
