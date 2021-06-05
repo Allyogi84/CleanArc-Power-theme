@@ -76,7 +76,7 @@
 							'theme_location' => 'header-menu', 
 							'container' => 'ul',
 							'container_class' => 'mainMenu', 
-							'menu_class'=> 'main-menu', 
+							'menu_class'=> 'sf-menu', 
 						) ); 
 						?>
 					</nav>

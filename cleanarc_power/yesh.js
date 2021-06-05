@@ -148,11 +148,23 @@ if ($(window).width() < 767) {
 $(window).on('load', function(e) {
 // 	$('.button-group.filters-button-group button:nth-child(1)').trigger('click'); 
 });
-$(".nav-toggler").click(function () {
-	$('.sch-menu nav').slideToggle('menu-active');
-	$(this).toggleClass('nav-active');
 
-});
+// $(".nav-toggler").click(function () {
+// 	$('.sch-menu nav').slideToggle('menu-active');
+// 	$(this).toggleClass('nav-active');
+
+// });
+
+(function($){ //create closure so we can safely use $ as alias for jQuery
+	$(document).ready(function(){
+
+		// initialise plugin
+		var example = $('#example').superfish({
+			//add options here if required
+		});
+	});
+})(jQuery);
+
 $('.slideInnerContainer').slick({
 	slidesToShow: 1,
 	slidesToScroll: 1,
