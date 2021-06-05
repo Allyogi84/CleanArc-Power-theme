@@ -82,6 +82,8 @@
     <!--    <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script> -->
 
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/yesh.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/libs/hoverIntent.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/libs/superfish.js"></script>
 
     <script>
       $(window).scroll(function () {
