@@ -21,12 +21,12 @@
 
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/media.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/megafish.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/libs/superfishg.css"> 
 		
 </head>
 <?php wp_head(); ?>
 
-<body <?php /*body_class()*/; ?>> 
+<body <?php body_class(); ?>> 
 	<!-- Top Bar -->
 	<div class="topbar">
 		<div class="container">
@@ -82,8 +82,7 @@
 					</nav>
 					<ul class="functional-menu">
 						<li><a href="<?php echo site_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/search.png"></a></li>
-						<li><a href="<?php echo site_url(); ?>/account-profile/"><img src="<?php echo get_template_directory_uri(); ?>/images/account.png"></a></li>
-						
+						<li><a href="<?php echo site_url(); ?>/account-profile/"><img src="<?php echo get_template_directory_uri(); ?>/images/account.png"></a></li>						
 					</ul>
 					<div class="SearchContainer">
 						<?php get_search_form(); ?>

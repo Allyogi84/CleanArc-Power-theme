@@ -155,15 +155,12 @@ $(window).on('load', function(e) {
 
 // });
 
-(function($){ //create closure so we can safely use $ as alias for jQuery
-	$(document).ready(function(){
-
-		// initialise plugin
-		var example = $('#example').superfish({
-			//add options here if required
-		});
-	});
-})(jQuery);
+$(document).ready(function(){
+// initialise plugin
+$('#menu-wp-bigcommerce').superfish({
+	//add options here if required
+});
+});
 
 $('.slideInnerContainer').slick({
 	slidesToShow: 1,
