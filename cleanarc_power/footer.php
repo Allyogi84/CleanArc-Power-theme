@@ -41,7 +41,7 @@
                 <h6><?php the_field('information_menu','options'); ?></h6>
                 <?php
                 wp_nav_menu( array( 
-                    'theme_location' => 'header-menu', 
+                    'theme_location' => 'extra-menu', 
                     'container' => 'ul',
                     'container_class' => 'footer-menu', 
                     'menu_class'=> 'footer-menu', 

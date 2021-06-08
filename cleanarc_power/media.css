@@ -3,6 +3,32 @@
 Media Query
 ~~~~~~~~~~~~~~~~~~~~~~~~
 */
+@media(min-width:992px){
+/*New menu code added	*/
+
+.mega-sub-menu ul ul {
+  display: none !important;
+	min-width: 180px !important;
+  transition: all .5s ease !important;	
+}
+.mega-sub-menu ul li:hover > ul,.mega-sub-menu ul ul li:hover   {
+  display:block !important;
+  transform: translateY(0)!important;	
+}
+
+.mega-sub-menu ul ul {
+    position:absolute  !important;
+    left: 80%  !important;
+    top: 0px !important;
+    background: #E5F1FB !important;
+    padding: 10px 10px !important;
+	z-index: 999!important;
+}  
+
+
+/*End New menu code added	*/
+}
+
 @media(max-width:1024px){
 	.tss-detail-info {
 		max-width: 450px;
@@ -18,7 +44,7 @@ Media Query
 
 @media(max-width:991px){
 	.sch-menu nav{
-		display: none;
+		display: block;
 	}
 	.tss-menu.nav-tabs .nav-link {
 		font-size: 12px;
@@ -47,7 +73,7 @@ Media Query
 	/* Mobile Menu */
 	.nav-toggler {
 		position: absolute;
-		display: block;
+		display: none;
 		width: 30px;
 		height: 20px;
 		right: 20px;
@@ -105,7 +131,7 @@ Media Query
 		right: 0;
 		left: 0;
 		top: 39px;
-		z-index: 9999;
+		z-index: 10;
 	}
 	.sch-logo {
 		width: 100px;

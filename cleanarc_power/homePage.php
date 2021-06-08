@@ -24,10 +24,39 @@
 		<div class="catContainerInnenr">
 			<div class="row">
 
+<?php 
+if( have_rows('icon_section') ): while( have_rows('icon_section') ) : the_row(); 
+
+$term = get_sub_field('category_title');
+$image = get_sub_field('image');
+	?>
+
+						<div class="col">
+							<div class="innerContainerProdct">
+								<a href="<?php echo esc_url( get_term_link( $term ) ); ?>">
+									<div class="imaheWrapper">
+<?php 
+if( !empty( $image ) ): ?>
+    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+<?php endif; ?>
+									</div>
+<?php 
+if( $term ): ?>
+    <h6><?php echo esc_html( $term->name ); ?></h6>
+<?php endif; ?>
+
+									
+								
+								</a>
+							</div>	
+						</div>
+<?php endwhile;  endif; ?>
+
 				</div>
 			</div>
 		</div>
 	</div>
+
 	<div class="sliderdevelopment">
 		<div class="container">
 			<div class="row home-row">
@@ -59,6 +88,7 @@
 			</div>
 		</div>
 	</div>
+<!-- Feature Categories Sectioin start  -->	
 	<div class="fetureCars" id="featurecat">
 		<div class="container">
 			<div class="headingFetureCat">
@@ -67,12 +97,33 @@
 			<div class="sliderCOntainerFetureCars">
 				<div class="fetureCatContainerInnenr">
 					<div class="sliderFeatureProducts">
-
-							</div>
+				<?php $termchildren = get_terms( 'bigcommerce_category',  array('parent' => 0) );?>
+				<?php foreach($termchildren as $category) {  $term_link = get_term_link( $category ); $thumbnail_id = get_term_meta( $category->term_id, 'thumbnail_id', true );  ?>
+					<?php $yes = get_field('is_featured', 'product_cat_'.$category->term_id)
+ ?>
+						<div class="col">
+							<div class="innerContainerProdct">
+								<a href="<?php echo $term_link; ?>">
+									<div class="imaheWrapper">
+										<img src="<?php the_field('imageasd', 'product_cat_'.$category->term_id); ?>">
+									</div>
+									<h6><?php echo $category->name; ?></h6>
+									<span><?php// echo $category->term_id; ?></span>
+									<span><?php// echo $category->description; ?></span>
+									<span><?php// $image = wp_get_attachment_url( $thumbnail_id );  ?>
+									<img src='<?php// echo $image; ?>' alt=''  /></span>
+								</a>
+							</div>	
 						</div>
+					<?php }  ?>
+
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+
+<!-- Feature Producdt Sectioin start  -->
 			<div class="featureProduct" id="featurepro">
 				<div class="container">
 					<div class="hedaing">
@@ -83,6 +134,8 @@
 				</div>
 			</div>
 		</div>
+
+
 		<div class="powerWorld">
 			<div class="container">
 				<div class="row">

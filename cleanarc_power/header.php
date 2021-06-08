@@ -82,7 +82,7 @@
 					</nav>
 					<ul class="functional-menu">
 						<li><a href="<?php echo site_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/search.png"></a></li>
-						<li><a href="<?php echo site_url(); ?>/account-profile/"><img src="<?php echo get_template_directory_uri(); ?>/images/account.png"></a></li>						
+						<li><a href="<?php echo site_url(); ?>/my-account/"><img src="<?php echo get_template_directory_uri(); ?>/images/account.png"></a></li>						
 					</ul>
 					<div class="SearchContainer">
 						<?php get_search_form(); ?>
