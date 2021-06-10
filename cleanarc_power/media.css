@@ -6,7 +6,7 @@ Media Query
 @media(min-width:992px){
 /*New menu code added	*/
 
-.mega-sub-menu ul ul {
+.mega-sub-menu ul ul ul{
   display: none !important;
 	min-width: 180px !important;
   transition: all .5s ease !important;	
@@ -16,7 +16,7 @@ Media Query
   transform: translateY(0)!important;	
 }
 
-.mega-sub-menu ul ul {
+.mega-sub-menu ul ul ul{
     position:absolute  !important;
     left: 80%  !important;
     top: 0px !important;
@@ -25,6 +25,13 @@ Media Query
 	z-index: 999!important;
 }  
 
+.sch-menu .product-categories > li {
+	float: left;
+	width: 14%;
+}
+.product-categories > li:nth-child(n+8) {
+	display: none;
+}
 
 /*End New menu code added	*/
 }
@@ -168,6 +175,9 @@ Media Query
 }
 
 @media(max-width:767px){
+.sub_category,.sub_category ul{
+  display: none !important ;
+}	
 	.topbar{
 		display: none;
 	}

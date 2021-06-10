@@ -41,7 +41,7 @@
                 <h6><?php the_field('information_menu','options'); ?></h6>
                 <?php
                 wp_nav_menu( array( 
-                    'theme_location' => 'extra-menu', 
+                    'theme_location' => 'footer-menu', 
                     'container' => 'ul',
                     'container_class' => 'footer-menu', 
                     'menu_class'=> 'footer-menu', 
@@ -51,7 +51,12 @@
             <div class="col-md-2">
                 <h6>Application</h6>
                 <ul class="footer-menu">
-                  
+                    <?php $termchildren = get_terms( 'product_cat',  array('parent' => 0) );?>
+                    <?php foreach($termchildren as $category) {  $term_link = get_term_link( $category ); ?>
+                        <?php $yes = get_field('is_featured', 'product_cat_'.$category->term_id); ?>
+                        <?php if ($yes !== 'Yes') { ?>
+                            <li> <a href="<?php echo $term_link; ?>"> <?php echo $category->name; ?> </a> </li>
+                        <?php } } ?>
                     </ul>
                 </div>
                 <div class="col-md-3">
@@ -75,7 +80,10 @@
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>  -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>  

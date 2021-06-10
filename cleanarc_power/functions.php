@@ -10,6 +10,7 @@ function wpb_custom_new_menu() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
+      'footer-menu' => __( 'Footer Menu' ),
       'extra-menu' => __( 'Extra Menu' )
     )
   );
@@ -353,3 +354,9 @@ function get_hansel_and_gretel_breadcrumbs()
 
     return $breadcrumb_output_link;
 }
+
+
+
+
+
+/*include 'custom_menu_items.php';*/

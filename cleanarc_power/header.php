@@ -31,10 +31,10 @@
 	<div class="topbar">
 		<div class="container">
 			<div class="topbar-content">
-				<div class="contact-link">
-					<a href="tel:<?php the_field('phone_number', 'options'); ?>"><i class="fa fa-phone" aria-hidden="true"></i> Call: <?php the_field('phone_number', 'options'); ?></a>
-					<a href="mailto:<?php the_field('email_address', 'options'); ?>"><i class="fa fa-envelope" aria-hidden="true"></i> Email: <?php the_field('email_address', 'options'); ?></a>
-				</div>
+<!-- 				<div class="contact-link">
+					<a href="tel:<?php// the_field('phone_number', 'options'); ?>"><i class="fa fa-phone" aria-hidden="true"></i> Call: <?php// the_field('phone_number', 'options'); ?></a>
+					<a href="mailto:<?php// the_field('email_address', 'options'); ?>"><i class="fa fa-envelope" aria-hidden="true"></i> Email: <?php// the_field('email_address', 'options'); ?></a>
+				</div> -->
 				<ul class="social-link">
 					<?php if( have_rows('social_icons', 'options') ): while( have_rows('social_icons', 'options') ) : the_row(); ?>
 						<li>
@@ -76,7 +76,7 @@
 							'theme_location' => 'header-menu', 
 							'container' => 'ul',
 							'container_class' => 'mainMenu', 
-							'menu_class'=> 'sf-menu', 
+							'menu_class'=> 'main-menu', 
 						) ); 
 						?>
 					</nav>
@@ -94,9 +94,54 @@
 					</div>
 				</div>
 			</div>
+			<?php if ( !is_home() && ! is_front_page() ) { ?> 
 
+				<div class="allcatesMenu">
+					<div class="closeIconSideBar"><i class="fa fa-close"></i></div>
+					<div class="headingAllCategories">
+						<h5><i class="fa fa-diamond"></i> ALL Categories</h5>
+					</div>
+					<?php $termchildren = get_terms( 'product_cat' );?>
+					<ul>
+						<?php foreach($termchildren as $category) {  $term_link = get_term_link( $category ); ?>
+							<li class="oistItemInner">
+								<a href="<?php echo $term_link; ?>">
+									<?php echo $category->name; ?>
+								</a>
+							</li>
+						<?php } ?>
+
+					</ul>
+				</div>
+			<?php } ?>
 		</div>
 
+		<div class="allCategoryMenunew">
+			<div class="container">
+				<div class="neewMenuCOntainer">
+					<img src="<?php echo site_url(); ?>/wp-content/uploads/2021/02/Screenshot-2021-02-14-at-4.53.21-AM.png">
+					<span>All Categories </span>
+					<ul>
+						<?php $termchildren = get_terms( 'product_cat',  array('parent' => 0) );?>
+						<?php foreach($termchildren as $category) {  $term_link = get_term_link( $category ); ?>
+							<?php $yes = get_field('is_featured', 'product_cat_'.$category->term_id); ?>
+								<?php if($category->name === "Charging Stations"){ ?>
+								<?php } else {?>
+								<li>
+									<a href="<?php echo $term_link; ?>">
+										<?php  
+											$idcat = $category->term_id;
+											$thumbnail_id = get_woocommerce_term_meta( $idcat, 'thumbnail_id', true );
+											$image = wp_get_attachment_url( $thumbnail_id );
+										?>
+										<h6><?php echo '<img src="'.$image.'" alt="" />'; ?><?php echo $category->name; ?></h6>
+									</a>
+								</li>
+							<?php } }?>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</header>
 
 <div class="mainCLass">
