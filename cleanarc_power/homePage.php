@@ -28,7 +28,7 @@
 				Your browser does not support the video tag.
 				</video>
 					<img src="<?php the_field('poster_image'); ?>">
-					 <?php the_field('Bannerivideo'); ?>
+					 
 				</div>
 				<div class="container">
 					<div class="contentContainerbanner">
