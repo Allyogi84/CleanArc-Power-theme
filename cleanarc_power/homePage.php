@@ -18,25 +18,25 @@
 </div> -->
 <div class="bannerContaine">
 	<div class="sliderContainerBanner">
-		<?php if( have_rows('banner_container') ): while( have_rows('banner_container') ) : the_row(); ?>
+		
 			<div class="innercontainerSlider">
 		
 				<div class="imageContainer">
 				<video width="100%" height="340" controls autoplay loop>
-				  <source src="<?php the_sub_field('mp4video'); ?>" type="video/mp4">
+				  <source src="<?php the_field('mp4video'); ?>" type="video/mp4">
 				  <source src="movie.ogg" type="video/ogg">
 				Your browser does not support the video tag.
 				</video>
-					<img src="<?php the_sub_field('Bannerivideo'); ?>">
-					 <?php the_sub_field('Bannerivideo'); ?>
+					<img src="<?php the_field('poster_image'); ?>">
+					 <?php the_field('Bannerivideo'); ?>
 				</div>
 				<div class="container">
 					<div class="contentContainerbanner">
-						<h2><?php the_sub_field('banner_heading'); ?></h2>
+						<h2><?php the_field('banner_heading'); ?></h2>
 					</div>
 				</div>
 			</div>
-		<?php endwhile; else : endif; ?>
+		
 	</div>
 </div>
 <div class="catsContainer" id="services">
