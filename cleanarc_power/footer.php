@@ -62,8 +62,8 @@
                 <div class="col-md-3">
                     <h6>Contact Us</h6>
                     <div class="footer-contact">
-                        <a><?php the_field('address','options'); ?></a>
-                        <a href="tel:<?php the_field('phone_number', 'options'); ?>">Call: <?php the_field('phone_number', 'options'); ?></a>
+                        <!-- <a><?php// the_field('address','options'); ?></a>
+                        <a href="tel:<?php// the_field('phone_number', 'options'); ?>">Call: <?php// the_field('phone_number', 'options'); ?></a> -->
                         <a href="mailto:<?php the_field('email_address', 'options'); ?>">Email: <?php the_field('email_address', 'options'); ?></a>
                     </div>
                 </div>

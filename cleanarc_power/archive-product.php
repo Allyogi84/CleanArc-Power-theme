@@ -72,6 +72,19 @@ if ( $children && $term->name != 'Wind' && $term->name != 'Water' ) { ?>
 							</ul>
 
 						</div>
+		<div class="regionFiltertext">
+			<div id="filters">
+				<select class="filter option-set clearfix pro-region"  data-filter-group="lichtfarbe">
+					<option value="*" data-filter-value="" class="selected">All Regions</option>
+					<?php  $brand_terms = get_terms('pa_region');
+	 foreach ($brand_terms as $term) : ?>
+					<option value="#filter-lichtfarbe-<?php echo $term->slug; ?>" data-filter-value=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>
+					<?php	endforeach; ?>
+				</select>
+				
+			</div>
+		</div>
+
 					</div>
 					<div class="productTagFilter">
 						<div class="grid">
